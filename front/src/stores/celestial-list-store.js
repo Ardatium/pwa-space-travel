@@ -12,7 +12,7 @@ export const useCelestialListStore = defineStore('celestial-list', {
         celestialList: []
     }),
 
-    getters: {
+    actions: {
         async loadAllCelestials() {
             try {
                 const {data} = await getAllCelestials();
@@ -20,10 +20,8 @@ export const useCelestialListStore = defineStore('celestial-list', {
             } catch (error) {
                 console.log(error)
             }
-        }
-    },
-
-    actions: {
+        },
+        
         async handleCreateCelestial(astroId, visited, visitDate, priority) {
             try {
                 await createACelestial(astroId, visited, visitDate, priority);
