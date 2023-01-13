@@ -25,4 +25,6 @@ const celestialSearchStore = useCelestialStore()
 celestialSearchStore.celestialSearch("andromeda")
 const searchResult = computed(() => celestialSearchStore.celestialList)
 
+console.log(searchResult)
+
 </script>
