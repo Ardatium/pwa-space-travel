@@ -21,7 +21,7 @@ export const useCelestialListStore = defineStore('celestial-list', {
                 console.log(error)
             }
         },
-
+        
         async handleCreateCelestial(astroId, visited, visitDate, priority) {
             try {
                 await createACelestial(astroId, visited, visitDate, priority);
