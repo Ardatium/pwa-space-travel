@@ -1,21 +1,14 @@
 <template>
-    <!--    <div class="q-pa-md">-->
-    <h3>Dashboard</h3>
-    <div class="to-visit-title">
-        <h5>Astres à visiter</h5>
+    <div class="q-pa-md">
+        <h3>Dashboard</h3>
+
+        <CelestialListComponent :myTitle="toVisitTitle"/>
+
     </div>
-    <CelestialListComponent/>
-    <!--    </div>-->
 </template>
 
-<script>
+<script setup>
 import CelestialListComponent from 'components/celestial-list/CelestialListComponent.vue'
 
-export default {
-    components: {
-        CelestialListComponent
-    }
-}
-
-const toVisitTile = "LET'S GO !!!"
+const toVisitTitle = "LET'S GO !!!"
 </script>

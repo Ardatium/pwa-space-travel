@@ -1,26 +1,12 @@
 <template>
-    <h3>COUCOU</h3>
-    <button @click="count++">You clicked me {{ count }} times.</button>
+  <div>My component</div>
 </template>
 
 <script>
-
 export default {
-    data() {
-        return {
-            count: 0
-        }
-    }
+  // name: 'ComponentName',
+  setup () {
+    return {}
+  }
 }
-import {ref} from "vue";
-
-const props = defineProps({
-    myTitle: {
-        type: String,
-        default: ""
-    }
-})
-
-const myTitle = ref(props.myTitle)
-
 </script>

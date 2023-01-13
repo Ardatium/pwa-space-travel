@@ -1,50 +1,27 @@
 <template>
-    <q-item
-      clickable
-      tag="a"
-      target="_blank"
-      :href="link"
-    >
-      <q-item-section
-        v-if="icon"
-        avatar
-      >
-        <q-icon :name="icon" />
-      </q-item-section>
-  
-      <q-item-section>
-        <q-item-label>{{ title }}</q-item-label>
-        <q-item-label caption>{{ caption }}</q-item-label>
-      </q-item-section>
-    </q-item>
-  </template>
-  
-  <script>
-  import { defineComponent } from 'vue'
-  
-  export default defineComponent({
-    name: 'EssentialLink',
-    props: {
-      title: {
+    <div class="q-pa-md">
+        <h5>{{ title }}</h5>
+
+
+    </div>
+</template>
+
+<script setup>
+
+import {useCelestialStore} from "stores/celestial-search-store";
+import {computed} from "vue";
+
+const props = defineProps({
+    title: {
         type: String,
-        required: true
-      },
-  
-      caption: {
-        type: String,
-        default: ''
-      },
-  
-      link: {
-        type: String,
-        default: '#'
-      },
-  
-      icon: {
-        type: String,
-        default: ''
-      }
+        default: "ComponentTitle"
     }
-  })
-  </script>
-  
+})
+
+const title = "Astres à visiter"
+
+const celestialSearchStore = useCelestialStore()
+celestialSearchStore.celestialSearch("andromeda")
+const searchResult = computed(() => celestialSearchStore.celestialList)
+
+</script>
