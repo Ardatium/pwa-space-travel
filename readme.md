@@ -7,4 +7,4 @@ Fonctionnalités :
         - en "à visiter"
         - en "visité"
     - Pouvoir regarder les astres enregistrés ("à vister" ou "visités")
-
+    - 
