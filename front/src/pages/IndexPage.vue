@@ -1,17 +1,21 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
-  </q-page>
+    <!--    <div class="q-pa-md">-->
+    <h3>Dashboard</h3>
+    <div class="to-visit-title">
+        <h5>Astres à visiter</h5>
+    </div>
+    <CelestialListComponent/>
+    <!--    </div>-->
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import CelestialListComponent from 'components/celestial-list/CelestialListComponent.vue'
 
-export default defineComponent({
-  name: 'IndexPage'
-})
+export default {
+    components: {
+        CelestialListComponent
+    }
+}
+
+const toVisitTile = "LET'S GO !!!"
 </script>
