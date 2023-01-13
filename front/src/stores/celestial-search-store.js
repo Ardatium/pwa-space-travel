@@ -1,10 +1,10 @@
 import {defineStore} from 'pinia';
 import {celestialSearch} from "src/services/celestialSearch";
-import {Notify} from "quasar";
+import {ref} from "vue";
 
 export const useCelestialStore = defineStore('celestial-search', {
     state: () => ({
-        celestialList: []
+        celestialList: ref()
     }),
 
     actions: {
@@ -13,10 +13,7 @@ export const useCelestialStore = defineStore('celestial-search', {
                 const {data} = await celestialSearch(term);
                 this.celestialList = data
             } catch (error) {
-                Notify.create({
-                    message: "Error whilst searching celestial bodies",
-                    type: "negative"
-                });
+                console.log(error)
             }
         }
     },
