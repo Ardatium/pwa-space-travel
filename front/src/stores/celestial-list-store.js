@@ -2,6 +2,7 @@ import {defineStore} from 'pinia';
 import {
     createACelestial,
     getAllCelestials,
+    getAllVisited,
     setCelestialPriority,
     setCelestialVisited,
     updateCelestial
@@ -9,19 +10,41 @@ import {
 
 export const useCelestialListStore = defineStore('celestial-list', {
     state: () => ({
-        celestialList: []
+        celestialList: [],
+        visitedCelestialList: [],
+        notVisitedCelestialList: []
     }),
 
     actions: {
         async loadAllCelestials() {
             try {
                 const {data} = await getAllCelestials();
+                await this.loadAllVisitedCelestials();
+                await this.loadAllNotVisitedCelestials();
                 this.celestialList = data
             } catch (error) {
                 console.log(error)
             }
         },
-        
+
+        async loadAllVisitedCelestials() {
+            try {
+                const {data} = await getAllVisited(true);
+                this.visitedCelestialList = data
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
+        async loadAllNotVisitedCelestials() {
+            try {
+                const {data} = await getAllVisited(false);
+                this.notVisitedCelestialList = data
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
         async handleCreateCelestial(astroId, visited, visitDate, priority) {
             try {
                 await createACelestial(astroId, visited, visitDate, priority);

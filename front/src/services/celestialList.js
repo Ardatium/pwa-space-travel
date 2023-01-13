@@ -4,6 +4,14 @@ export function getAllCelestials() {
     return storageAPI.get(`/objects`)
 }
 
+export function getAllVisited(visited) {
+    return storageAPI.get(`/objects/vi/${visited}`)
+}
+
+export function getAllWithPriority(priority) {
+    return storageAPI.get(`/objects/vi/${priority}`)
+}
+
 export function createACelestial(astroId, visited, visitDate, priority) {
     return storageAPI.post(`/objects`, {
         astro_id: astroId,
@@ -44,3 +52,5 @@ export function setVisitDate(astroId, visitDate) {
         visit_date: visitDate
     })
 }
+
+
