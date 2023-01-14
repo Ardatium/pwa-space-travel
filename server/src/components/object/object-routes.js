@@ -10,6 +10,6 @@ objects.put('/:id', objectController.update)
 objects.del('/:id', objectController.del)
 
 objects.get('/pr/:priority', objectController.getPriority)
-objects.get('/vi/visited', objectController.getVisited)
+objects.get('/vi/:visited', objectController.getVisited)
 
 export default objects

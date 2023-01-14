@@ -6,20 +6,51 @@
             class="celestial-card"
             style="background: radial-gradient(circle, #ffffff  0%, #f0ebfc 100%)"
         >
-            <q-expansion-item
-                class="shadow-1 overflow-hidden"
-                expand-icon-class="text-white"
-                header-class="bg-primary text-white"
-                v-bind:label="celestial.astro_id"
-            >
-                <q-card-section>
-                    <div class="text-subtitle1">{{ celestial.visited }}</div>
-                </q-card-section>
+            <q-card-section class="q-pt-none">
+                <q-list>
+                    <q-item>
+                        <q-item-section>
+                            <q-checkbox id="task-title-txt"
+                                        v-model="celestial.visited"
+                                        v-bind:label="celestial.astro_id"
+                                        @click="celestialListStore.handleUpdateVisitStatus(celestial._id, celestial.visited)">
+                            </q-checkbox>
+                            <q-item-label caption lines="2">Dernière visite:
+                                {{ date.formatDate(celestial.visit_date, 'DD MMM YYYY') }}
+                            </q-item-label>
+                        </q-item-section>
+                    </q-item>
 
-                <q-card-section>
-                    <div class="text-subtitle1">{{ celestial.priority }}</div>
-                </q-card-section>
-            </q-expansion-item>
+
+                </q-list>
+                <q-card-actions>
+
+                </q-card-actions>
+
+            </q-card-section>
+
+            <!--            <q-list>-->
+            <!--                <q-item>-->
+            <!--                    <q-item-section>-->
+            <!--                        <q-icon color="primary" name="done" size="2em"/>-->
+            <!--                    </q-item-section>-->
+            <!--                    <q-item-section>Déjà visité</q-item-section>-->
+            <!--                </q-item>-->
+
+            <!--                <q-item>-->
+            <!--                    <q-item-section>-->
+            <!--                        <div class="text-subtitle1">{{ celestial.priority }}</div>-->
+            <!--                    </q-item-section>-->
+            <!--                </q-item>-->
+
+            <!--                <q-item>-->
+            <!--                    <q-item-section v-if="!props.toVisit">-->
+            <!--                        <div class="text-subtitle1">{{ date.formatDate(celestial.visit_date, 'DD-MM-YYYY') }}</div>-->
+            <!--                    </q-item-section>-->
+            <!--                </q-item>-->
+            <!--            </q-list>-->
+
+
         </q-card>
     </div>
 </template>
@@ -28,6 +59,7 @@
 
 import {computed} from "vue";
 import {useCelestialListStore} from "stores/celestial-list-store";
+import {date} from 'quasar';
 
 const props = defineProps({
     title: {
