@@ -13,15 +13,6 @@
             <ListComponent :return-all="false" :toVisit="false"/>
         </q-expansion-item>
 
-        <q-expansion-item
-            class="shadow-1 overflow-hidden"
-            expand-icon-class="text-white"
-            header-class="bg-primary text-white"
-            v-bind:label="visitedTitle"
-        >
-            <ListComponent :return-all="true" :toVisit="false"/>
-        </q-expansion-item>
-
 
     </div>
 </template>
