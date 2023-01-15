@@ -1,7 +1,5 @@
 <template>
     <div class="q-pa-md">
-        <h3>Dashboard</h3>
-
         <ListComponent :return-all="false" :title="toVisitTitle" :toVisit="true"/>
 
         <q-expansion-item
@@ -13,7 +11,6 @@
             <ListComponent :return-all="false" :toVisit="false"/>
         </q-expansion-item>
 
-
     </div>
 </template>
 
@@ -22,6 +19,5 @@ import ListComponent from "components/dashboard/ListComponent";
 
 const toVisitTitle = "Astres à visiter"
 const visitedTitle = "Astres visités"
-const allCelestialsTitle = "Tous les astres enregistrés"
 
 </script>
