@@ -29,28 +29,6 @@
 
             </q-card-section>
 
-            <!--            <q-list>-->
-            <!--                <q-item>-->
-            <!--                    <q-item-section>-->
-            <!--                        <q-icon color="primary" name="done" size="2em"/>-->
-            <!--                    </q-item-section>-->
-            <!--                    <q-item-section>Déjà visité</q-item-section>-->
-            <!--                </q-item>-->
-
-            <!--                <q-item>-->
-            <!--                    <q-item-section>-->
-            <!--                        <div class="text-subtitle1">{{ celestial.priority }}</div>-->
-            <!--                    </q-item-section>-->
-            <!--                </q-item>-->
-
-            <!--                <q-item>-->
-            <!--                    <q-item-section v-if="!props.toVisit">-->
-            <!--                        <div class="text-subtitle1">{{ date.formatDate(celestial.visit_date, 'DD-MM-YYYY') }}</div>-->
-            <!--                    </q-item-section>-->
-            <!--                </q-item>-->
-            <!--            </q-list>-->
-
-
         </q-card>
     </div>
 </template>
