@@ -4,8 +4,9 @@ import {
     getAllCelestials,
     getAllVisited,
     setCelestialPriority,
-    setCelestialVisited,
-    updateCelestial
+    setVisitDate,
+    updateCelestial,
+    updateVisitStatus
 } from "src/services/celestialList";
 
 export const useCelestialListStore = defineStore('celestial-list', {
@@ -63,18 +64,12 @@ export const useCelestialListStore = defineStore('celestial-list', {
             }
         },
 
-        async handleSetCelestialVisited(astroId) {
+        async handleUpdateVisitStatus(id, status) {
             try {
-                await setCelestialVisited(astroId);
-                await this.loadAllCelestials();
-            } catch (error) {
-                console.log(error)
-            }
-        },
-
-        async handleSetCelestialNotVisited(astroId) {
-            try {
-                await setCelestialNotVisited(astroId);
+                await updateVisitStatus(id, status);
+                if (status) {
+                    await setVisitDate(id, Date.now())
+                }
                 await this.loadAllCelestials();
             } catch (error) {
                 console.log(error)

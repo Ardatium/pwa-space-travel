@@ -35,9 +35,9 @@ export function setCelestialVisited(astroId) {
     })
 }
 
-export function setCelestialNotVisited(astroId) {
+export function updateVisitStatus(astroId, status) {
     return storageAPI.put(`/objects/${astroId}`, {
-        visited: false
+        visited: status
     })
 }
 
@@ -47,7 +47,9 @@ export function setCelestialPriority(astroId, priority) {
     })
 }
 
+
 export function setVisitDate(astroId, visitDate) {
+    console.log(visitDate)
     return storageAPI.put(`/objects/${astroId}`, {
         visit_date: visitDate
     })
