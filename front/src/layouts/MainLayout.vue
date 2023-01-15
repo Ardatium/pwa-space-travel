@@ -13,7 +13,7 @@
                     <img src="/images/space-logo.png">
                 </q-avatar>
 
-                <q-toolbar-title>Nom de notre application</q-toolbar-title>
+                <q-toolbar-title>Space Travel</q-toolbar-title>
 
                 <q-btn
                     dense flat
