@@ -33,6 +33,12 @@
     </div>
 </template>
 
+<style scoped>
+.celestial-card {
+    margin-bottom: 1em;
+}
+</style>
+
 <script setup>
 
 import {computed} from "vue";
