@@ -16,7 +16,7 @@
       </div>
     </q-card-section>
     <q-card-actions align="center">
-      <q-btn color="primary" @click="add(name, visited, selected)"> Ajouter à visiter</q-btn>
+      <q-btn color="primary" @click="add(name, visited, selected)" v-close-popup> Ajouter à visiter</q-btn>
     </q-card-actions>
   </q-card>
 </template>
