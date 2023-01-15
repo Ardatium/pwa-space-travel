@@ -6,13 +6,11 @@ const routes = [
     children: [
       { 
         path: '', component: () => import('pages/IndexPage.vue'),
-        children : [
-          {
-            path: '/search', component: () => import('pages/SearchPage.vue')
-          } 
-        ]
-      }
-    ]
+      },
+      {
+        path: '/search', component: () => import('pages/SearchPage.vue')
+      } 
+    ] 
   },
 
   // Always leave this as last one,

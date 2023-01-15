@@ -11,7 +11,7 @@ export const useCelestialStore = defineStore('celestial-search', {
         async celestialSearch(term) {
             try {
                 const {data} = await celestialSearch(term);
-                this.celestialList = data
+                this.celestialList = data.data
             } catch (error) {
                 console.log(error)
             }
